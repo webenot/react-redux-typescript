@@ -1,3 +1,11 @@
+// Core
 import React, { FC } from 'react';
 
-export const App: FC = () => <h1>Welcome</h1>;
+// Components
+import { Header } from './components/header';
+
+export const App: FC = () => (
+  <div>
+    <Header title="Welcome" />
+  </div>
+);
