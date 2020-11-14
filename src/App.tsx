@@ -4,8 +4,8 @@ import React, { FC } from 'react';
 // Components
 import { Header } from './components/header';
 
+// Store
+
 export const App: FC = () => (
-  <div>
-    <Header title="Welcome" />
-  </div>
+  <Header title="Welcome" />
 );

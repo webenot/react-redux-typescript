@@ -1,18 +1,21 @@
 // Core
 import React, { FC, useState } from 'react';
 
-type PropsType = {
+type PropTypes = {
   title?: string;
-  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   children?: never;
-};
+}
 
-export const Header: FC<PropsType> = ({ title }: PropsType) => {
+export const Header: FC<PropTypes> = ({ title }: PropTypes) => {
   const content = typeof title === 'string' ? title.toLowerCase() : null;
-  const [ counter, setCounter ] = useState<number>(1);
+  const [ counter, setCounter ] = useState<number>(0);
 
-  const increase = () => setCounter(prev => prev + 1);
-  const decrease = () => setCounter(prev => prev - 1);
+  const increase = (): void => {
+    setCounter(prevCounter => prevCounter + 1);
+  };
+  const decrease = (): void => {
+    setCounter(prevCounter => prevCounter - 1);
+  };
 
   return (
     <>
@@ -23,5 +26,6 @@ export const Header: FC<PropsType> = ({ title }: PropsType) => {
 };
 
 Header.defaultProps = {
-  title: 'Hello',
+  title: 'Hello, World',
+  children: undefined,
 };
