@@ -11,16 +11,19 @@ export const Header: FC<PropTypes> = ({ title }: PropTypes) => {
   const [ counter, setCounter ] = useState<number>(0);
 
   const increase = (): void => {
-    setCounter(prevCounter => prevCounter + 1);
+    setCounter((prevCounter) => prevCounter + 1);
   };
+
   const decrease = (): void => {
-    setCounter(prevCounter => prevCounter - 1);
+    setCounter((prevCounter) => prevCounter - 1);
   };
 
   return (
     <>
       <h1>{content}</h1>
       <h3>{counter.toFixed()}</h3>
+      <button type="button" onClick={increase}>Increase</button>
+      <button type="button" onClick={decrease}>Decrease</button>
     </>
   );
 };
