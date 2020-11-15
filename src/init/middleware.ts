@@ -1,7 +1,7 @@
 // Core
 import { createLogger } from 'redux-logger';
 import { Middleware } from 'redux';
-import createSagaMiddleware from 'redux-saga';
+import createSagaMiddleware from '@redux-saga/core';
 
 export const logger = createLogger({
   duration: true,
@@ -11,7 +11,7 @@ export const logger = createLogger({
     prevState: (): string => '#1C5FAF',
     action: (): string => '#149945',
     nextState: (): string => '#A47104',
-    error: (): string => '#ff0005',
+    error: (): string => '#FF0005',
   },
 });
 
